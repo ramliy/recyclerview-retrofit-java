@@ -2,6 +2,8 @@ package com.ramliy.retrofit.java.service.retrofit;
 
 import com.ramliy.retrofit.java.model.genre.GenreResponse;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -11,5 +13,5 @@ import retrofit2.http.Query;
  */
 public interface ApiClient {
     @GET("genre/movie/list")
-    Call<GenreResponse> getListGenres(@Query("api_key") String apiKey);
+    Call<List<GenreResponse>> getListGenres(@Query("api_key") String apiKey);
 }

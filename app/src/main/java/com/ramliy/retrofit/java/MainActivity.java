@@ -9,6 +9,7 @@ import com.ramliy.retrofit.java.model.genre.Genre;
 import com.ramliy.retrofit.java.model.genre.GenreResponse;
 import com.ramliy.retrofit.java.service.retrofit.ApiService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,8 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rvHome;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView.Adapter adapter;
-    private List<Genre> listGenre;
-
+    private List<Genre> listGenre = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
     private void fetchData() {
 
         mSwipeRefreshLayout.setRefreshing(true);
-        Call<GenreResponse> call = ApiService.getInstance().getListGenres(BuildConfig.API_KEY);
-        call.enqueue(new Callback<GenreResponse>() {
+        Call<List<GenreResponse>> call = ApiService.getInstance().getListGenres(BuildConfig.API_KEY);
+        call.enqueue(new Callback<List<GenreResponse>>() {
             @Override
-            public void onResponse(Call<GenreResponse> call, Response<GenreResponse> response) {
-                listGenre = response.body().getGenres();
+            public void onResponse(Call<List<GenreResponse>> call, Response<List<GenreResponse>> response) {
+                System.out.println("onResponse " + response.isSuccessful());
                 adapter = new HomeAdapter(listGenre);
                 rvHome.setAdapter(adapter);
                 mSwipeRefreshLayout.setRefreshing(false);
@@ -66,10 +66,12 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<GenreResponse> call, Throwable t) {
+            public void onFailure(Call<List<GenreResponse>> call, Throwable t) {
+                System.out.println("onFailure " + t.getMessage());
 
             }
         });
 
     }
+
 }
