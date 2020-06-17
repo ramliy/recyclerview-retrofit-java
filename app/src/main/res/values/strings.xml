@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">retrofit-java</string>
     <string name="data_empty">Data not available</string>
+    <string name="error">Error Occured</string>
     <string name="hello_world">Hello World</string>
     <string name="good_morning">Good Morning</string>
+    <string name="overview">Overview</string>
+    <string name="rating">Rating</string>
+    <string name="released">Released</string>
 </resources>

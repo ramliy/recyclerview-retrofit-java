@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/padding_size_16dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_size_16dp"
+        android:layout_marginTop="@dimen/padding_size_8dp"
+        android:layout_toEndOf="@+id/cv_poster"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_18sp"
+        tool:text="Avanger End Game" />
+
+    <TextView
+        android:id="@+id/tv_overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginStart="@dimen/padding_size_16dp"
+        android:layout_marginTop="@dimen/padding_size_2dp"
+        android:layout_toEndOf="@+id/cv_poster"
+        android:ellipsize="end"
+        android:maxLines="3"
+        tool:text="Overview" />
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_overview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/padding_size_16dp"
+        android:layout_marginTop="@dimen/padding_size_8dp"
+        android:layout_toEndOf="@+id/cv_poster"
+        android:gravity="start|center_vertical"
+        tool:text="4.8" />
+
+    <TextView
+        android:id="@+id/tv_release_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rating"
+        android:layout_marginStart="@dimen/padding_size_16dp"
+        android:layout_marginTop="@dimen/padding_size_8dp"
+        android:layout_toEndOf="@+id/cv_poster"
+        tool:text="11 Juni 2020" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_poster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/padding_size_8dp"
+        app:cardElevation="@dimen/padding_size_4dp">
+
+        <ImageView
+            android:id="@+id/iv_poster"
+            android:layout_width="110dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

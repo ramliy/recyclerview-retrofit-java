@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/refresh"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tv_empty_data"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/data_empty"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/text_size_18sp" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_home" />
+            android:layout_marginTop="@dimen/padding_size_16dp"
+            android:paddingStart="@dimen/padding_size_16dp"
+            android:paddingEnd="@dimen/padding_size_16dp"
+            tools:listitem="@layout/item_movie" />
 
 
     </RelativeLayout>
